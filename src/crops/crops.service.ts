@@ -1,26 +1,29 @@
 import { Injectable } from '@nestjs/common';
+import { CropsRepository } from './database/repositories/crops.repository';
 import { CreateCropDto } from './dto/create-crop.dto';
 import { UpdateCropDto } from './dto/update-crop.dto';
 
 @Injectable()
 export class CropsService {
-  create(createCropDto: CreateCropDto) {
-    return 'This action adds a new crop';
+  constructor(private readonly repository: CropsRepository) {}
+
+  async create(createCropDto: CreateCropDto) {
+    return await this.repository.create(createCropDto);
   }
 
-  findAll() {
-    return `This action returns all crops`;
+  async findAll() {
+    return await this.repository.findAll();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} crop`;
+  async findOne(id: string) {
+    return await this.repository.find(id);
   }
 
-  update(id: number, updateCropDto: UpdateCropDto) {
-    return `This action updates a #${id} crop`;
+  async update(id: string, updateCropDto: UpdateCropDto) {
+    return await this.repository.update(id, updateCropDto);
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} crop`;
+  async remove(id: string) {
+    return await this.repository.remove(id);
   }
 }

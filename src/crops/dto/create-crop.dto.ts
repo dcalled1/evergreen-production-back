@@ -1,1 +1,6 @@
-export class CreateCropDto {}
+export class CreateCropDto {
+  startDate: Date;
+  estimatedEndDate: Date;
+  seed: string;
+  plot: string;
+}
