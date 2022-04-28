@@ -5,7 +5,6 @@ import { AppService } from './app.service';
 import { DatabaseModule } from './database/database.module';
 import { PlotsModule } from './plots/plots.module';
 import { CropsModule } from './crops/crops.module';
-import { HarvestsModule } from './harvests/harvests.module';
 import configuration from './config/configuration';
 
 @Module({
@@ -17,7 +16,6 @@ import configuration from './config/configuration';
     DatabaseModule,
     PlotsModule,
     CropsModule,
-    HarvestsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

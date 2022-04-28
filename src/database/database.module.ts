@@ -12,7 +12,6 @@ import { Connection } from 'mongoose';
         return {
           uri: connectionString,
           connectionFactory: (connection: Connection) => {
-            console.log(connectionString);
             connection.on('connected', () => {
               console.log(connectionString);
               console.log('====================================');
