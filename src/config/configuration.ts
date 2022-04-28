@@ -1,7 +1,10 @@
 export default () => {
   const configuration = {
     app: {
-      port: parseInt(process.env.APP_PORT, 10) || 3000,
+      port:
+        parseInt(process.env.PORT) ||
+        parseInt(process.env.APP_PORT, 10) ||
+        3000,
     },
     database: {
       user: process.env.DATABASE_USER,
