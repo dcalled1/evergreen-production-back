@@ -38,4 +38,8 @@ export class PlotsService {
   async setFree(id: string) {
     return await this.repository.update(id, { status: PlotStatus.Free });
   }
+
+  async isFree(id: string): Promise<boolean> {
+    return (await this.repository.find(id)).status == PlotStatus.Free;
+  }
 }

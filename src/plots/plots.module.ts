@@ -11,5 +11,6 @@ import { PlotDo, PlotSchema } from './database/schemas/plot.schema';
   ],
   controllers: [PlotsController],
   providers: [PlotsService, PlotsRepository],
+  exports: [PlotsService],
 })
 export class PlotsModule {}
