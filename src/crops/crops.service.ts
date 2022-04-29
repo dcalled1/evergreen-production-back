@@ -12,7 +12,7 @@ export class CropsService {
   ) {}
 
   async create(createCropDto: CreateCropDto) {
-    if (await this.plotsService.isFree(createCropDto.plot))
+    if (!(await this.plotsService.isFree(createCropDto.plot)))
       throw new Error('Plot busy');
     await this.plotsService.setBusy(createCropDto.plot);
     return await this.repository.create(createCropDto);
