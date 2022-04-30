@@ -5,7 +5,6 @@ import {
   MonitoredDatumDo,
   MonitoredDatumDocument,
 } from '../schemas/monitored-datum.schema';
-import { CreateMonitoredDatumDto } from 'src/monitored-data/dto/create-monitored-datum.dto';
 import { MonitoredDatum } from 'src/monitored-data/entities/monitored-datum.entity';
 
 @Injectable()
